@@ -19,20 +19,35 @@ export const MainLayout: FC<PropsWithChildren<MainLayoutProps>> = ({
 	children,
 	classNames,
 }) => {
+	const isMobile = window.innerWidth <= 767;
 	return (
 		<div className={clsx(s.wrap, classNames?.root)}>
 			<div className={clsx(s.wrap__header, classNames?.footer)}>
-				<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
-					<ButtonX>{ROUTES.home.title}</ButtonX>
-				</Link>
-				<Link to={ROUTES.test.path} className={s.wrap__headerBtn}>
-					<ButtonX>{ROUTES.test.title}</ButtonX>
-				</Link>
+				<div className={s.wrap__headerLogo}>CompanyName</div>
+				{!isMobile && (
+					<div className={s.wrap__headerNavBar}>
+						<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
+							<ButtonX>{ROUTES.home.title}</ButtonX>
+						</Link>
+						<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
+							<ButtonX>{ROUTES.about.title}</ButtonX>
+						</Link>
+						<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
+							<ButtonX>{ROUTES.services.title}</ButtonX>
+						</Link>
+						<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
+							<ButtonX>{ROUTES.portfolio.title}</ButtonX>
+						</Link>
+						<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
+							<ButtonX>{ROUTES.contacts.title}</ButtonX>
+						</Link>
+					</div>
+				)}
 			</div>
 			<div className={clsx(s.wrap__body, classNames?.body)}>
 				<ErrorBoundary>{children}</ErrorBoundary>
 			</div>
-			<div className={clsx(s.wrap__footer, classNames?.footer)}>FOOTER</div>
+			<div className={clsx(s.wrap__footer, classNames?.footer)}></div>
 		</div>
 	);
 };

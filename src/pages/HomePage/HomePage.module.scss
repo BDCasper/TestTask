@@ -1,5 +1,154 @@
 
 .wrap{
-	background: #eee;
-	padding: 20px;
-}
+	background: hsl(0, 0%, 100%);
+	width: 100%;
+	min-height: 1255px;
+	color: black;
+	&__Cards{
+		background-color: #F7F9FC;
+		min-height: 402px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 10px;
+		@media (max-width: 1200px) {
+			height: fit-content;
+			padding: 50px 0;
+		}
+		&Title{
+			font-weight: 700;
+			font-size: 25px;
+		}
+		&Items{
+			margin-top: 50px;
+			min-height: 402px;
+			display: flex;
+			width: 1154px;
+			gap: 22px;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			@media (max-width: 1200px) {
+				width: 100%;
+				gap: 64px;
+			}
+		}
+	}
+	&__Portfolio {
+		background-color: white;
+		height: 853px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media (max-width: 1200px) {
+			height: fit-content;	
+		}
+		&Title {
+			margin-top: 40px;
+			color: black;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+			span:first-child {
+				font-weight: 700;
+				font-size: 32px;
+				text-align: center;
+			}
+			span:last-child {
+				font-size: 16px;
+				text-align: center;
+				@media (max-width:768px) {
+					padding: 0 13px;
+				}
+			}
+		}
+		&NavBar {
+			height: 50px;
+			min-width: 1156px;
+			border-bottom: solid 1px #E1E5EE;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			gap: 35px;
+			margin-top: 30px;
+			@media (max-width: 768px) {
+				min-width: 320px;
+				width: 100%;
+				overflow-y: auto;
+				padding: 0 15px;
+			}
+			@media (max-width: 504px) {
+				min-width: 320px;
+				width: 100%;
+				justify-content: flex-start;
+				overflow-y: auto;
+				padding: 0 15px;
+			}
+			span {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				height: 37px;
+				font-size: 16px;
+				font-weight: 700;
+				color: #9DA5B9;
+				cursor: pointer;
+				transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+				@media (max-width: 768px) {
+					text-wrap: nowrap;
+				}
+				&.wrap__PortfolioNavBarActive {
+					color: #4A6FFF;
+
+					&::after {
+						transform: scaleX(1);
+					}
+				}
+
+				&::after {
+					content: "";
+					bottom: -2px;
+					width: 100%;
+					padding: 0 7px;
+					height: 2px;
+					background-color: #4A6FFF;
+					transform: scaleX(0);
+					transition: transform 0.2s ease-in-out;
+				}
+			}
+		}
+		&Items {
+			width: 1156px;
+			height: 547px;
+			margin-top: 30px;
+			@media (max-width: 1200px) {
+				padding-bottom: 30px;
+				min-width: 320;
+				width: fit-content;
+				height: fit-content;	
+			}
+			&Item{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 20px;
+				opacity: 0;
+				transform: translateY(20px);
+				transition: transform 0.5s ease, opacity 0.5s ease;
+				@media (max-width: 1200px) {
+					justify-content: center;
+					gap: 16px;
+				}
+			}
+			&Active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}	

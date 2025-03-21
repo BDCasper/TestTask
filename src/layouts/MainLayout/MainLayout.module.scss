@@ -1,34 +1,64 @@
 .wrap {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
+  background-color: #2A324B;
+  
   &__header {
 		display: flex;
-		justify-content: center;
-		gap: 8px;
-		padding: 12px;
-		&Btn{
-			min-width: 90px;
-			& button{
-				width: 100%;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		max-height: 50px;
+		@media (min-width: 768px) {
+			justify-content: space-around;
+			&Logo{
+				font-weight: 700;
+				font-size: 22px;
+			}
+			&Btn{
+				& button{
+					width: 100%;
+				}
+			}
+			&NavBar{
+				display: flex;
+				width: 402px;
+				justify-content: space-between;
 			}
 		}
+
+		@media (max-width: 767px) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			background-color: #2A324B;
+			&Logo{
+				margin-left: 4.4%;
+				font-weight: 700;
+				font-size: 18px;
+			}
+		}
+		
 	}
   &__body {
     flex: 1 1 auto;
-		height: inherit;
-		display: flex;
-		position: relative;
-		overflow: hidden;
+	height: inherit;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	& > * {
 		width: 100%;
-		& > * {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-		}
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (max-width: 767px) {
+		padding-top: 50px;
+	}
   }
 
   &__footer {

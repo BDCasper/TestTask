@@ -1,7 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import { HomePage } from '@pages/HomePage';
 import { ErrorPage } from '@pages/ErrorPage';
-import { TestPage } from '@pages/TestPage';
 
 export type ExtendedRouteObject = RouteObject & {
 	title: string;
@@ -12,14 +11,34 @@ export type ExtendedRouteObject = RouteObject & {
 export const ROUTES = {
 	home: {
 		path: '/',
-		title: 'Home',
+		title: 'Главная',
 		element: <HomePage />,
 	} as ExtendedRouteObject,
-	test: {
-		path: '/test',
-		title: 'Test',
-		element: <TestPage />,
+
+	about: {
+		path: '/',
+		title: 'О нас',
+		element: <HomePage />,
 	} as ExtendedRouteObject,
+
+	services: {
+		path: '/',
+		title: 'Услуги',
+		element: <HomePage />,
+	} as ExtendedRouteObject,
+
+	portfolio: {
+		path: '/',
+		title: 'Портфолио',
+		element: <HomePage />,
+	} as ExtendedRouteObject,
+
+	contacts: {
+		path: '/',
+		title: 'Контакты',
+		element: <HomePage />,
+	} as ExtendedRouteObject,
+
 	error: {
 		path: '*',
 		title: 'Error Page',

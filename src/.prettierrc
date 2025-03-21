@@ -4,7 +4,7 @@
 	"singleQuote": true,
 	"tabWidth": 2,
 	"arrowParens": "always",
-	"endOfLine": "lf",
+	"endOfLine": "auto",
 	"overrides": [
 		{
 			"files": ["*.css", "*.scss"],

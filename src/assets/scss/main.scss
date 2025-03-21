@@ -1,15 +1,19 @@
 @use "base/index" as *;
 
 :root {
-	//font-weight: 400;
-	//font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	//line-height: 1.5;
-	//color-scheme: light dark;
-	//font-synthesis: none;
-	//text-rendering: optimizelegibility;
-	//-webkit-font-smoothing: antialiased;
-	//-moz-osx-font-smoothing: grayscale;
-	//color: #000;
+	font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	color-scheme: light dark;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
